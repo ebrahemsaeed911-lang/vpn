@@ -1,0 +1,31 @@
+@use "variables" as *;
+
+:root {
+  --color-primary-light: #{$color-primary-light};
+  --color-primary-dark: #{$color-primary-dark};
+  --color-secondary-dark: #{$color-secondary-dark};
+  --color-secondary-light: #{$color-secondary-light};
+}
+
+body {
+  font-family: $font-family;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-padding: 10rem;
+  overflow-x: clip;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+li {
+  cursor: pointer;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+}

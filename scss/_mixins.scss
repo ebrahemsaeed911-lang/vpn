@@ -1,0 +1,23 @@
+@use "variables" as *;
+
+@mixin transition($property: all, $duration: 0.3s) {
+  transition: $property $duration ease-in-out;
+}
+
+@mixin fill-on-hover {
+  &:hover {
+    background-color: $color-primary-dark;
+    color: $white;
+  }
+}
+
+@mixin section-divider($height: 70%, $left: 0) {
+  &::after {
+    content: "";
+    width: 2px;
+    height: $height;
+    background-color: $border-color;
+    position: absolute;
+    left: $left;
+  }
+}

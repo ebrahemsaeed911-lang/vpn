@@ -1,0 +1,281 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 3rem 0;
+  background-color: $white;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+
+  img {
+    display: block;
+    height: auto;
+  }
+}
+
+.burger,
+.sidebar-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  line-height: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-link {
+  color: $color-secondary-light;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 18px;
+
+  &:hover {
+    color: $color-primary-light;
+  }
+}
+
+.heading {
+  color: $color-secondary-dark;
+  font-weight: 500;
+  font-size: 5rem;
+  line-height: 7rem;
+  margin-bottom: 2.7rem;
+}
+
+.heading-2 {
+  color: $color-secondary-dark;
+  font-weight: 500;
+  font-size: 3.5rem;
+  line-height: 5rem;
+}
+
+.heading-3 {
+  color: $color-secondary-dark;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+
+.paragraph {
+  color: $color-secondary-light;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+}
+
+.paragraph-1 {
+  color: $color-secondary-light;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.5rem;
+}
+
+.card-1 {
+  width: 114rem;
+  height: 20rem;
+  border-radius: $radius-sm;
+  background-color: $white;
+  box-shadow: 0px 25px 80px -50px rgba(0, 0, 0, 0.5);
+}
+
+.card-3 {
+  width: 40rem;
+  height: 23rem;
+  padding: 3rem;
+  border: 2px solid $border-color;
+  border-radius: $radius-sm;
+}
+
+.card-4 {
+  width: 114rem;
+  height: 23.3rem;
+  box-shadow: 0px 25px 80px -50px rgba(0, 0, 0, 0.5);
+  border-radius: $radius-sm;
+  padding: 7rem 5.8rem;
+}
+
+.span-1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $color-secondary-dark;
+}
+
+.span-2 {
+  font-size: 2rem;
+  color: $color-secondary-light;
+}
+
+.border-1 {
+  @include section-divider;
+}
+
+.border-2 {
+  @include section-divider;
+
+  border: 1px solid $border-color;
+  border-radius: $radius-sm;
+  padding: 8rem 0 5rem 0;
+}
+
+.third-section {
+  padding-bottom: 10rem;
+  box-shadow: 0px 25px 80px -75px rgba(0, 0, 0, 0.2);
+}
+
+.width {
+  width: 17.7rem;
+  height: 4.5rem;
+}
+
+.hover {
+  @include transition;
+
+  &:hover {
+    border: 2px solid $color-primary-dark;
+  }
+}
+
+.color-1 {
+  color: $color-secondary-dark;
+}
+
+.circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: lightgray;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &.active {
+    background-color: red;
+  }
+}
+
+.arrow,
+.arrow-1 {
+  border: 2px solid $color-primary-dark;
+  border-radius: $radius-circle;
+  padding: 1.2rem 2rem;
+  cursor: pointer;
+  @include transition;
+  font-size: 3rem;
+  color: $color-primary-dark;
+  @include fill-on-hover;
+}
+
+.arrow {
+  rotate: 180deg;
+}
+
+.footer {
+  background-color: $footer-bg;
+}
+
+.padding-footer {
+  padding: 18rem 15rem 12rem 15rem;
+}
+
+.translate {
+  transform: translateY(90px);
+}
+
+.pointer {
+  cursor: pointer;
+  @include transition;
+
+  &:hover {
+    scale: 1.2;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: min(25rem, 85vw);
+  height: 100vh;
+  height: 100dvh;
+  background-color: #f53838a2;
+  z-index: 1000;
+  align-items: center;
+  transition: opacity 0.3s ease, transform 0.3s ease,
+    visibility 0.3s ease;
+  backdrop-filter: blur(10px);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(100%);
+  pointer-events: none;
+
+  li {
+    @include transition;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+#sidebar:target {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.sidebar-close {
+  align-self: flex-end;
+  margin: 2rem 2rem 1rem;
+}
+
+.sidebar-nav {
+  width: 100%;
+  padding: 0 2rem;
+  gap: 2rem;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sidebar-actions {
+  width: 100%;
+  gap: 1rem;
+  padding: 0 2rem 2rem;
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background-color: rgba($color-secondary-dark, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+body:has(#sidebar:target) {
+  overflow: hidden;
+
+  .sidebar-backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+.margin-15 {
+  padding: 8rem 0 !important;
+  filter: brightness(0);
+  opacity: 0.5;
+}

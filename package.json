@@ -1,0 +1,12 @@
+{
+  "name": "laslesvpn",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "sass scss/style.scss style.css --no-source-map",
+    "watch:css": "sass --watch scss/style.scss style.css --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.106.1"
+  }
+}

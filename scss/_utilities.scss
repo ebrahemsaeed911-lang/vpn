@@ -1,0 +1,69 @@
+@use "variables" as *;
+
+.padding-header {
+  padding: 0 10rem;
+}
+
+.gap-custom {
+  gap: 4rem;
+}
+
+.gap-custom-1 {
+  gap: 2.5rem;
+}
+
+.gap-custom-2 {
+  gap: 5rem;
+}
+
+.margin {
+  margin-top: 9.7rem;
+}
+
+.margin-2 {
+  margin-top: 5.4rem;
+}
+
+.margin-3 {
+  margin-top: 13rem;
+}
+
+.margin-4 {
+  margin-top: 7rem;
+}
+
+.margin-5 {
+  margin-top: 8rem;
+}
+
+.margin-6 {
+  margin-top: 3rem;
+}
+
+.margin-7 {
+  margin-top: 15rem;
+}
+
+.margin-8,
+.margin-9 {
+  margin-top: 5rem;
+}
+
+.margin-10 {
+  margin-top: 6.5rem !important;
+}
+
+.size {
+  width: 5rem;
+  height: 5rem;
+}
+
+.size-1 {
+  width: 33px;
+  height: 33px;
+}
+
+.width-custom {
+  width: 20rem;
+  height: 10rem;
+}
